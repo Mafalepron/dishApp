@@ -1,10 +1,12 @@
 import React from 'react';
 import {DishItem} from './DishItem'
 
-function DishList() {
+function DishList(props) {
     return(
             <ol class="list-group list-group-numbered">
-                <DishItem />
+                { props.dishes.map(dish => {
+                    return <DishItem dish={dish} key={dish.id}/>    
+                }) }  
             </ol>
     )
 }
