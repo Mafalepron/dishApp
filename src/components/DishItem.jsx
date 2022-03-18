@@ -1,67 +1,33 @@
 import React, {useState} from 'react';
-import ChangeModal from './Items/ChangeModal'
+import ChangeQuantityModal from './Elems/ChangeQuantityModal'
 
-function DishItem({dish}) {
-    const [remains, setRemains] = useState('0')
+function DishItem(props) {
+    const {dish, changeQuantity} = props;
+    const [inputRemain, setInputRemain] = useState(dish.quantity);
 
-    const onRemain = (inputRemain) => {
-        setRemains(inputRemain)
-    }
 
     return( 
             <div>
-                    <li class="list-group-item d-flex justify-content-between align-items-start">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold">Блюдо 1</div>
+                    <li className="list-group-item d-flex justify-content-between align-items-start">
+                    <div className="ms-2 me-auto">
+                        <div className="fw-bold">Блюдо №{dish.number}</div>
                             {dish.dishname}
                         </div>
                         <div style={{float: 'left'}}>
                             Остаток на начало дня: 
                             &nbsp;
-                            <span class="badge bg-primary rounded-pill">{remains}</span>
+                            <span className="badge bg-primary rounded-pill">{inputRemain}</span>
                             <br />
                             <div style={{display:"flex", justifyContent: "flex-end", marginTop: '5px'}}>
-                                <ChangeModal 
-                                    onRemain={onRemain} 
-                                    remains={remains}
+                                <ChangeQuantityModal  
+                                    dish={dish}
+                                    changeQuantity={changeQuantity}
+                                    inputRemain={inputRemain}
+                                    setInputRemain={setInputRemain}
                                 /> 
                             </div>
                         </div>
                 </li>
-                {/* <li class="list-group-item d-flex justify-content-between align-items-start">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold">Блюдо 2</div>
-                            Макароны
-                        </div>
-                        <div style={{float: 'left'}}>
-                            Остаток на начало дня: 
-                            &nbsp;
-                            <span class="badge bg-primary rounded-pill">14</span>
-                            <br />
-                            <div style={{display:"flex", justifyContent: "flex-end", marginTop: '5px'}}> 
-                                <ChangeModal /> 
-                            </div>
-                        </div>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold">Блюдо 3</div>
-                            Рис
-                    </div>
-                    <div style={{float: 'left'}}>
-                        Остаток на начало дня:
-                        &nbsp;
-                        <span 
-                            class="badge bg-primary rounded-pill"
-                        >
-                            14
-                        </span>
-                        <br />
-                        <div style={{display:"flex", justifyContent: "flex-end", marginTop: '5px'}}> 
-                            <ChangeModal /> 
-                        </div>
-                    </div>
-                </li> */}
             </div>
     )
 }

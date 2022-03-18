@@ -1,10 +1,9 @@
-import {Navbar} from './components/Navbar.jsx'
+import {ContentBar} from './components/ContentBar.jsx';
+
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-    </div>
+      <ContentBar />
   );
 }
 

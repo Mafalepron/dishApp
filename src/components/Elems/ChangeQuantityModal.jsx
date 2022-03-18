@@ -1,4 +1,6 @@
-import * as React from 'react';
+import React, {useEffect} from 'react';
+
+
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
@@ -21,9 +23,12 @@ const style = {
   p: 4,
 };
 
-export default function ChangeModal(props) {
+export default function ChangeQuantityModal(props) {
+
+  const {dish, changeQuantity} = props;
+  // const [inputRemain, setInputRemain] = React.useState(dish.quantity);
   const [open, setOpen] = React.useState(false);
-  const [inputRemain, setInputRemain] = React.useState('');
+ 
 
   const handleOpen = () => {
     setOpen(true);
@@ -36,19 +41,19 @@ export default function ChangeModal(props) {
 
   const submitHandler = (event) => {
     event.preventDefault()
-    props.onRemain(inputRemain)
+    console.log(dish.id, props.inputRemain)
+    changeQuantity(dish.id, props.inputRemain);
     setOpen(false);
   }
 
-
-
+   
   return (
             <div>
                 <Button 
                     type="button"
                     className="btn btn-primary"
                     data-mdb-toggle="button"
-                    autocomplete="off"
+                    autoComplete="off"
                     style={{width:"100px", height:"25px", padding: "0", backgroundColor:"red", textTransform: 'lowercase', color: 'white' }}
                     onClick={handleOpen}>
                         Изменить
@@ -73,8 +78,8 @@ export default function ChangeModal(props) {
                             label="Остаток" 
                             variant="outlined"
                             type="number"
-                            value={inputRemain}
-                            onChange={event => setInputRemain(event.target.value)} 
+                            value={props.inputRemain}
+                            onChange={event => props.setInputRemain(event.target.value)} 
                         />
                         <Button 
                             variant='contained'
