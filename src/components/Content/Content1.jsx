@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
-import {AddDishesForm} from './Elems/AddDishesForm';
-import MenuTab from './Elems/MenuTab';
+import React from 'react';
+import {AddDishesForm} from '../Elems/Forms/AddDishesForm';
+import MenuTab from '../Elems/MenuTab';
 
 
 
@@ -20,7 +20,11 @@ function Content1(props) {
                 </div>
                 <div className="col-md-6" >
                     <div style={{display:'flex', justifyContent:'flex-end', marginBottom: '10px'}}>
-                        <MenuTab changeQuantity={props.changeQuantity} dishes={props.dishes}/>
+                        <MenuTab 
+                            changeQuantity={props.changeQuantity} 
+                            dishes={props.dishes}
+                            content={props.content}
+                        />
                     </div>
                     
                 </div>

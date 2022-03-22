@@ -23,7 +23,7 @@ const style = {
   p: 4,
 };
 
-export default function ChangeQuantityModal(props) {
+export default function ChangeRemainModal(props) {
 
   const {dish, changeQuantity} = props;
   // const [inputRemain, setInputRemain] = React.useState(dish.quantity);
@@ -54,7 +54,7 @@ export default function ChangeQuantityModal(props) {
                     className="btn btn-primary"
                     data-mdb-toggle="button"
                     autoComplete="off"
-                    style={{width:"100px", height:"25px", padding: "0", backgroundColor:"red", textTransform: 'lowercase', color: 'white' }}
+                    style={{width:"70px", height:"22px", padding: "0", backgroundColor:"red", textTransform: 'lowercase', color: 'white', fontSize:"12px" }}
                     onClick={handleOpen}>
                         Изменить
                 </Button>

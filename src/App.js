@@ -1,4 +1,4 @@
-import {ContentBar} from './components/ContentBar.jsx';
+import {ContentBar} from './components/Content/ContentBar.jsx';
 
 
 function App() {

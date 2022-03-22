@@ -4,7 +4,10 @@ import PropTypes from 'prop-types';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import {DishList} from '../DishList';
+
+import { DishListFirst } from '../DishLists/DishListFirst';
+import { DishListSecond } from '../DishLists/DishListSecond';
+import { DishListThird } from '../DishLists/DishListThird';
 
 import EmojiFoodBeverageIcon from '@mui/icons-material/EmojiFoodBeverage';
 import DinnerDiningIcon from '@mui/icons-material/DinnerDining';
@@ -59,13 +62,13 @@ export default function MenuTab(props) {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-      <DishList changeQuantity={props.changeQuantity} dishes={props.dishes}/>
+          <DishListFirst changeQuantity={props.changeQuantity} dishes={props.dishes} content={props.content}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+          <DishListSecond changeQuantity={props.changeQuantity} dishes={props.dishes} content={props.content}/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+          <DishListThird changeQuantity={props.changeQuantity} dishes={props.dishes} content={props.content}/>
       </TabPanel>
     </Box>
   );

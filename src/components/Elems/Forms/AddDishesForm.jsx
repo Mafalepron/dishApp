@@ -14,7 +14,6 @@ function AddDishesForm(props) {
         {   id: Date.now(),
             dishname: '',
             quantity: '',
-            number: 1 ,
             category: 'first'  }
         );
 
@@ -26,8 +25,7 @@ function AddDishesForm(props) {
             {   id: Date.now(),
                 dishname: '',
                 quantity: '',
-                number: dish.number + 1,
-                category: 'first'       }
+                category: 'first'    }
         )
     };
 
@@ -81,12 +79,40 @@ function AddDishesForm(props) {
                                     aria-labelledby="demo-row-radio-buttons-group-label"
                                     name="row-radio-buttons-group"
                                 >
-                                    <FormControlLabel value="first" control={<Radio sx={{'& .MuiSvgIcon-root': {
-                                        fontSize: 16,}}}/>} label="Первое" sx={{fontSize: '12px'}}/>
-                                    <FormControlLabel value="second" control={<Radio sx={{'& .MuiSvgIcon-root': {
-                                        fontSize: 16,}}}/>} label="Второе" />
-                                    <FormControlLabel value="third" sx={{marginLeft:'20px'}} control={<Radio sx={{'& .MuiSvgIcon-root': {
-                                        fontSize: 16,}}}/>} label="Десерт" />
+                                    <FormControlLabel 
+                                        value="first" 
+                                        control={<Radio sx={{'& .MuiSvgIcon-root': {
+                                            fontSize: 16,}}}/>} 
+                                        label="Первое"  
+                                        onChange={ event => 
+                                            setDish(
+                                                        { ...dish,
+                                                            category:event.target.value }
+                                                                                            )
+                                                                                                }/>
+                                    <FormControlLabel 
+                                        value="second" 
+                                        control={<Radio sx={{'& .MuiSvgIcon-root': {
+                                            fontSize: 16,}}}/>} 
+                                        label="Второе" 
+                                        onChange={ event => 
+                                            setDish(
+                                                        { ...dish,
+                                                            category:event.target.value }
+                                                                                            )
+                                                                                                }/>
+                                    <FormControlLabel 
+                                        value="third" 
+                                        sx={{marginLeft:'20px'}} 
+                                        control={<Radio sx={{'& .MuiSvgIcon-root': {
+                                            fontSize: 16,}}}/>} 
+                                        label="Десерт" 
+                                        onChange={ event => 
+                                            setDish(
+                                                        { ...dish,
+                                                            category:event.target.value }
+                                                                                            )
+                                                                                                }/>
                                 </RadioGroup>
                     </FormControl>
                     <Button 
