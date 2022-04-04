@@ -9,29 +9,27 @@ const MyKeyboard = () => {
     // for (let i = 0; i < alphabet.length; i++) {
     //     massiv.push(alphabet.charCodeAt(i))
     // }
-    // console.log(massiv)
+
     const handleClick = (event) => {
-        var foo = document.querySelector(`${s.keyboard}`);
-
-        for (var i = 0; i < foo.length; i++) {
-        foo[i].classList.remove("active");
+            let foo = document.querySelectorAll(`.${s.kkey}`);
+            let space = document.querySelector(`.${s.kkeyspace}`);
+            space.classList.remove(`${s.active}`);
+            foo.forEach(element => element.classList.remove(`${s.active}`));
+            event.target.classList.add(`${s.active}`)
         }
-
-        e.currentTarget.classList.add("active");
-        };
-    }
+ 
 
     return (
             <div className={s.keyboard}>
                 {
                     keyboard.map(elem => {
                             if (elem === 49) {
-                                return <div className={s.kkey} data-code={elem} style={{marginLeft: '25px'}} >{String.fromCharCode(elem)}</div>
+                                return <div className={s.kkey} onClick={handleClick} style={{marginLeft: '25px'}} >{String.fromCharCode(elem)}</div>
                             }
                             if (elem === 48 || elem === 1098 || elem === 1101) {
                                 return( <div >
-                                            <div className={s.kkey} data-code={elem} >{String.fromCharCode(elem)}</div>  
-                                            <div className={s.clearfix}/> 
+                                            <div className={s.kkey} onClick={handleClick}>{String.fromCharCode(elem)}</div>  
+                                            <div className={s.clearfix}/>
                                         </div>
                                 ) 
                             } 
@@ -39,11 +37,11 @@ const MyKeyboard = () => {
                                 return(
                                         <div>
                                             <div className={s.clearfix}/> 
-                                            <div className={s.kkeyspace} data-code={elem}>{String.fromCharCode(elem)}</div>  
+                                            <div className={s.kkeyspace} onClick={handleClick}>{String.fromCharCode(elem)}</div>  
                                         </div>
                                 )
                             } 
-                        return <div className={s.kkey} data-code={elem}>{String.fromCharCode(elem)}</div>
+                        return <div className={s.kkey} onClick={handleClick}>{String.fromCharCode(elem)}</div>
                     })
                         
                 }
