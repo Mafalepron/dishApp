@@ -1,0 +1,65 @@
+.keyboard {
+    display: block;
+    /* border: 1px solid black; */
+    padding: 13px;
+    width: 410px;
+    border-radius: 10px;
+    background-color: #E3E6F1;
+    box-shadow: 0.1em 0.3em 5px rgba(122,122,122,0.5);
+
+}
+
+.keyboard::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.kkey {
+    width: 25px;
+    height: 31px;
+    /* border: 0.1px solid black; */
+    background-color: white;
+    border-radius: 25%;
+    margin: 3px;
+    padding: 3px;
+    float: left;
+    color:black;
+    text-align:center;
+    font-size: 15px;
+    font-weight: bold;
+    box-shadow: 0.2em 0.2em 5px rgba(122,122,122,0.5);
+
+}
+.backspace {
+    width: 100px;
+    height: 25px;
+    border: 0.1px solid #BBBBBB;
+    background-color: white;
+    border-radius: 10px;
+    margin: 3px;
+    padding: 3px;
+
+}
+.kkeyspace {
+    width: 120px;
+    height: 25px;
+    /* border: 0.1px solid #BBBBBB; */
+    background-color: white;
+    border-radius: 7px;
+    margin: 3px;
+    margin-left: 120px;
+    padding: 3px;
+    box-shadow: 0.2em 0.2em 5px rgba(122,122,122,0.5);
+
+}
+
+.clearfix {
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+.active {
+    background: orange;
+}

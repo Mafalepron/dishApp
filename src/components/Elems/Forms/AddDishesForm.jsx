@@ -5,6 +5,7 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
+import { MyKeyboard } from '../Keyboard/MyKeyboard'
 
 
 
@@ -32,7 +33,7 @@ function AddDishesForm(props) {
     return(
         <div 
           className='InputWithoutCheck'>
-            <p style={{fontSize: '14px', textAlign: 'center', color: "#1976D2"}}>Для того, чтобы добавить блюдо заполните поля ниже</p>
+            <p style={{fontSize: '14px', textAlign: 'center', color: "#1976D2"}}>Начните поиск подходящего блюда в категории</p>
             <form >
                 <div 
                   className="input-group mb-3" 
@@ -71,50 +72,11 @@ function AddDishesForm(props) {
                                                                                             } />
                 </div> 
                 <div 
+                  style={{display:'flex', justifyContent:"flex-end", marginTop:"10px"}} >
+                <MyKeyboard />
+                </div>                                                                    
+                <div 
                   style={{display:'flex', justifyContent:"flex-end", marginTop:"-8px"}} >
-                    <FormControl sx={{marginLeft: '35px'}}>
-                            <FormLabel id="demo-row-radio-buttons-group-label" sx={{fontSize: '12px'}}>Выберите категорию блюда</FormLabel>
-                                <RadioGroup
-                                    row
-                                    aria-labelledby="demo-row-radio-buttons-group-label"
-                                    name="row-radio-buttons-group"
-                                >
-                                    <FormControlLabel 
-                                        value="first" 
-                                        control={<Radio sx={{'& .MuiSvgIcon-root': {
-                                            fontSize: 16,}}}/>} 
-                                        label="Первое"  
-                                        onChange={ event => 
-                                            setDish(
-                                                        { ...dish,
-                                                            category:event.target.value }
-                                                                                            )
-                                                                                                }/>
-                                    <FormControlLabel 
-                                        value="second" 
-                                        control={<Radio sx={{'& .MuiSvgIcon-root': {
-                                            fontSize: 16,}}}/>} 
-                                        label="Второе" 
-                                        onChange={ event => 
-                                            setDish(
-                                                        { ...dish,
-                                                            category:event.target.value }
-                                                                                            )
-                                                                                                }/>
-                                    <FormControlLabel 
-                                        value="third" 
-                                        sx={{marginLeft:'20px'}} 
-                                        control={<Radio sx={{'& .MuiSvgIcon-root': {
-                                            fontSize: 16,}}}/>} 
-                                        label="Десерт" 
-                                        onChange={ event => 
-                                            setDish(
-                                                        { ...dish,
-                                                            category:event.target.value }
-                                                                                            )
-                                                                                                }/>
-                                </RadioGroup>
-                    </FormControl>
                     <Button 
                         variant="contained" 
                         sx={{height:"32px", fontSize:'13px'}} 
@@ -123,6 +85,7 @@ function AddDishesForm(props) {
                                                   Добавить </Button>
                 </div>
             </form>
+            
         </div>
     )
 };

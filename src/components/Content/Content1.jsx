@@ -26,7 +26,6 @@ function Content1(props) {
                             content={props.content}
                         />
                     </div>
-                    
                 </div>
             </div>
         </div>
