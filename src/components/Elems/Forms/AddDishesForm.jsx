@@ -1,10 +1,5 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import Button from '@mui/material/Button';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
 import { MyKeyboard } from '../Keyboard/MyKeyboard'
 
 
@@ -73,7 +68,7 @@ function AddDishesForm(props) {
                 </div> 
                 <div 
                   style={{display:'flex', justifyContent:"flex-end", marginTop:"10px"}} >
-                <MyKeyboard />
+                <MyKeyboard dish={ dish } setDishName = { setDish }/>
                 </div>                                                                    
                 <div 
                   style={{display:'flex', justifyContent:"flex-end", marginTop:"-8px"}} >
