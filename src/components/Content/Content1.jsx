@@ -11,15 +11,13 @@ function Content1(props) {
     return(
         <div className='Content1'>
             <div className="row">
-                <div className="col-md-5 ">
+                <div className="col-md-6 ">
                     <div className='ramka-7'>
-                        <br />
-                        <br />
-                        <AddDishesForm addDishes={props.addDishes}/>
+                        <AddDishesForm addDishes={props.addDishes} />
                     </div>
                 </div>
                 <div className="col-md-6" >
-                    <div style={{display:'flex', justifyContent:'flex-end', marginBottom: '10px'}}>
+                    <div style={{display:'flexbox', justifyContent:'flex-end', marginBottom: '15px'}}>
                         <MenuTab 
                             changeQuantity={props.changeQuantity} 
                             dishes={props.dishes}
