@@ -1,33 +1,13 @@
 import React, {useState} from 'react';
-import {Content1} from './Content1';
-import {Content2} from './Content2';
-import EnteredForm from '../Elems/Forms/EnteredForm';
+
+
+import { Coming } from './Coming/Coming';
+import { Refund } from './Refund/Refund';
+import EnteredForm from './EnteredForm';
 
 
 function ContentBar() {
-    const [dishes, setDishes] = useState([]);
-    const [content, setContent] = useState('content1');
-
-
-    const addDishes = (dish) => {
-        setDishes([...dishes, dish]);
-        console.log(dishes)
-    };
-
-    const changeQuantity = (id, inputRemain) => {
-        let newDish = {};
-        let newDishes = dishes;
-        dishes.map((dish, index) => {
-                if (dish.id === id) {
-                        newDish = {...dish,
-                        quantity: inputRemain
-                        }
-                    newDishes[index] = newDish;
-                }
-            })
-            setDishes(newDishes)
-            console.log(dishes)
-    };
+    const [content, setContent] = useState('coming');
 
 
     return(
@@ -49,7 +29,7 @@ function ContentBar() {
                             aria-controls="ex2-pills-1"
                             aria-selected="true"
                             style={{border: "1px solid #AFAFAF"}}
-                            onClick={() => {setContent('content1')}}>
+                            onClick={() => {setContent('coming')}}>
                                                                     Приход 
                         </a>
                 </li>
@@ -65,7 +45,7 @@ function ContentBar() {
                             aria-controls="ex2-pills-2"
                             aria-selected="false"
                             style={{border: "1px solid #AFAFAF"}}
-                            onClick={() => {setContent('content2')}}>
+                            onClick={() => {setContent('refund')}}>
                                                                     Возврат
                         </a>
                 </li>
@@ -79,10 +59,7 @@ function ContentBar() {
                     id="ex2-pills-1"
                     role="tabpanel"
                     aria-labelledby="ex2-tab-1">
-                        <Content1 
-                            addDishes={addDishes}
-                            changeQuantity={changeQuantity}
-                            dishes={dishes} 
+                        <Coming 
                             content={content}
                             />
                 </div>
@@ -91,9 +68,7 @@ function ContentBar() {
                     id="ex2-pills-2"
                     role="tabpanel"
                     aria-labelledby="ex2-tab-2">
-                        <Content2 
-                            changeQuantity={changeQuantity}
-                            dishes={dishes} 
+                        <Refund 
                             content={content}
                             />
                 </div>

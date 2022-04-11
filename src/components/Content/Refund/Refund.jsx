@@ -1,14 +1,14 @@
 import React from 'react';
-import MenuTab from '../Elems/MenuTab';
+import MenuTab from '../../Elems/MenuTab';
 
 
 
 
-function Content2(props) {
+function Refund(props) {
 
 
     return(
-        <div className='Content1'>
+        <div className='Refund'>
             <div className="row">
                 <div className="col-md-5 ">
 
@@ -26,4 +26,4 @@ function Content2(props) {
     ) 
 };
 
-export {Content2};
+export { Refund };

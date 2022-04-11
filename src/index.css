@@ -20,9 +20,9 @@ code {
 
 /* рамка */
 .ramka-7 {
-  width: 500px;
+  width: 700px;
   border-radius: 2%; 
-  height: 700px;
+  height: 900px;
   background-color: #FFF;
   position: absolute;
   margin: 60px auto;

@@ -1,25 +1,23 @@
 import React from 'react';
-import {AddDishesForm} from '../Elems/Forms/AddDishesForm';
-import MenuTab from '../Elems/MenuTab';
+import {AddDishesForm} from './Elems/AddDishesForm/AddDishesForm';
+import MenuTab from '../../Elems/MenuTab';
 
 
 
 
-function Content1(props) {
+function Coming(props) {
 
 
     return(
-        <div className='Content1'>
+        <div className='Coming'>
             <div className="row">
-                <div className="col-md-5 ">
+                <div className="col-md-6 ">
                     <div className='ramka-7'>
-                        <br />
-                        <br />
                         <AddDishesForm addDishes={props.addDishes}/>
                     </div>
                 </div>
                 <div className="col-md-6" >
-                    <div style={{display:'flex', justifyContent:'flex-end', marginBottom: '10px'}}>
+                    <div style={{display:'flexbox', justifyContent:'flex-end', marginBottom: '15px'}}>
                         <MenuTab 
                             changeQuantity={props.changeQuantity} 
                             dishes={props.dishes}
@@ -32,4 +30,6 @@ function Content1(props) {
     ) 
 };
 
-export {Content1};
+
+
+export { Coming }

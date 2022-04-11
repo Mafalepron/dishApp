@@ -28,7 +28,7 @@ const MyKeyboard = (props) => {
                 {
                     keyboard.map(elem => {
                             if (elem === 49) {
-                                return <div className={s.kkey} onClick={handleClick} style={{marginLeft: '25px'}} >{String.fromCharCode(elem)}</div>
+                                return <div className={s.kkey} onClick={handleClick} style={{marginLeft: '45px'}} >{String.fromCharCode(elem)}</div>
                             }
                             if (elem === 48 || elem === 1098 || elem === 1101) {
                                 return( <div >
