@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import ChangeQuantityModal from '../Elems/Modal/ChangeRemainModal';
-import ChangeRemainModal from '../Elems/Modal/ChangeRemainModal';
 
-function DishItem1(props) {
+
+
+function ComingTabMenuDishItem(props) {
  
 
 
@@ -26,7 +26,7 @@ function DishItem1(props) {
                                                 <span className="badge bg-primary rounded-pill" style={{marginLeft:"-1px"}}>0</span> 
                                         </div>
                                             &nbsp;&nbsp;
-                                                <ChangeQuantityModal />
+                                                
                                                     
                                     </div>
                                     </div>
@@ -37,4 +37,4 @@ function DishItem1(props) {
 
 
 
-export {DishItem1};
+export { ComingTabMenuDishItem };

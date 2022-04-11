@@ -1,6 +1,6 @@
 import React from 'react';
-import {AddDishesForm} from './Elems/AddDishesForm/AddDishesForm';
-import MenuTab from '../../Elems/MenuTab';
+import { AddDishesForm } from './Elems/AddDishesForm/AddDishesForm';
+import ComingTabMenu from './Elems/ComingTabMenu/ComingTabMenu'
 
 
 
@@ -18,7 +18,7 @@ function Coming(props) {
                 </div>
                 <div className="col-md-6" >
                     <div style={{display:'flexbox', justifyContent:'flex-end', marginBottom: '15px'}}>
-                        <MenuTab 
+                        <ComingTabMenu
                             changeQuantity={props.changeQuantity} 
                             dishes={props.dishes}
                             content={props.content}

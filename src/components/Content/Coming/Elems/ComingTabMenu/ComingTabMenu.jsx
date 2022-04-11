@@ -5,9 +5,9 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
-import { DishListFirst } from '../DishLists/DishListFirst';
-import { DishListSecond } from '../DishLists/DishListSecond';
-import { DishListThird } from '../DishLists/DishListThird';
+import { ComingTabMenuDishListFirst } from './ComingTabMenuDishLists/ComingTabMenuDishListFirst';
+import { ComingTabMenuDishListSecond } from './ComingTabMenuDishLists/ComingTabMenuDishListSecond';
+import { ComingTabMenuDishListThird } from './ComingTabMenuDishLists/ComingTabMenuDishListThird';
 
 import EmojiFoodBeverageIcon from '@mui/icons-material/EmojiFoodBeverage';
 import DinnerDiningIcon from '@mui/icons-material/DinnerDining';
@@ -46,7 +46,7 @@ function a11yProps(index) {
   };
 }
 
-export default function MenuTab(props) {
+export default function ComingTabMenu(props) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -62,13 +62,13 @@ export default function MenuTab(props) {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-          <DishListFirst changeQuantity={props.changeQuantity} dishes={props.dishes} content={props.content}/>
+          <ComingTabMenuDishListFirst dishes={props.dishes} content={props.content}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-          <DishListSecond changeQuantity={props.changeQuantity} dishes={props.dishes} content={props.content}/>
+          <ComingTabMenuDishListSecond  dishes={props.dishes} content={props.content}/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-          <DishListThird changeQuantity={props.changeQuantity} dishes={props.dishes} content={props.content}/>
+          <ComingTabMenuDishListThird  dishes={props.dishes} content={props.content}/>
       </TabPanel>
     </Box>
   );

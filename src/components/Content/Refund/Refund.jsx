@@ -1,5 +1,5 @@
 import React from 'react';
-import MenuTab from '../../Elems/MenuTab';
+import RefundTabMenu from './Elems/RefundTabMenu/RefundTabMenu';
 
 
 
@@ -15,10 +15,10 @@ function Refund(props) {
                 </div>
                 <div className="col-md-6" >
                     <div style={{display:'flex', justifyContent:'flex-end', marginBottom: '10px'}}>
-                        <MenuTab 
+                        {/* <MenuTab 
                             changeQuantity={props.changeQuantity} 
                             dishes={props.dishes} 
-                            content={props.content}/>
+                            content={props.content}/> */}
                     </div>
                 </div>
             </div>
