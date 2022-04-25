@@ -9,33 +9,42 @@ import DishApiItem from './DishApiItems/DishApiItem'
 function AddDishesForm(props) {
   const { dishsArr = [] } = useContext(CustomContext);
   const [dishs, setDishs] = useState(dishsArr);
+  const [dishName, setDishName] = useState('');
 
-  const [dishName, setDishName] = useState('')
-  //функция поиска
+  const [handleInput, setHandleInput] = useState(false)
+
+
   const findDishByName = (e) => {
     let findedDishs = [];
     dishsArr.map( (dish) => {
-      if ( dish.dishname.toUpperCase().indexOf(e.target.value.toUpperCase()) > -1 ) {
-          findedDishs.push(dish)
+      if ( dish.dishname.toUpperCase().indexOf(dishName.toUpperCase()) > -1 ) {
+            findedDishs.push(dish)
      }
     })
     return findedDishs
   }
 
+
   const handleSetDishName = (e) => {
+    setDishName(e.target.value)
     let newDishs = findDishByName(e)
     setDishs(newDishs)
-    setDishName(e.target.value)
+    console.log(dishName)
   }
 
-  const [dishId, setDishId] = useState(0)
+  //функция поиска
+  
 
-  const [dishQuantity, setDishQuantity] = useState(0)
+  
 
-  const handleSetDishQuantity = (e) => {
-    //функция поиска
-    setDishQuantity(e.target.value)
-  }
+  // const [dishId, setDishId] = useState(0)
+
+  // const [dishQuantity, setDishQuantity] = useState(0)
+
+  // const handleSetDishQuantity = (e) => {
+  //   //функция поиска
+  //   setDishQuantity(e.target.value)
+  // }
 
     return(
       <div >
@@ -49,11 +58,11 @@ function AddDishesForm(props) {
                       marginBottom: '140px',
                       marginLeft: '30px',
                       textAlign: 'center',
-        alignItems: 'center',
-        justifyContent: 'center',
+                      alignItems: 'center',
+                      justifyContent: 'center',
                       }}>
                                       { dishs.map( (dish) => {
-                                        return <DishApiItem dish={dish} />
+                                        return <DishApiItem dish={dish} key={dish.dishId} />
                                       }) }
         </div>
         <div 
@@ -80,7 +89,11 @@ function AddDishesForm(props) {
                 </div> 
                 <div 
                   style={{marginTop:"10px"}} >
-                    <MyKeyboard />
+                    <MyKeyboard 
+                        setDishName={setDishName}
+                        dishName={dishName} 
+                        findDishByName={findDishByName} 
+                        setDishs={setDishs} />
                 </div>                                                                    
         </div>
         </div>
