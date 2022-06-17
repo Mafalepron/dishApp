@@ -1,7 +1,8 @@
 import React, { useState, useContext  } from 'react';
+import s from './AddDishesForm.module.css';
 import { MyKeyboard } from './Keyboard/MyKeyboard';
 import { CustomContext } from '../../../../../Context';
-import DishApiItem from './DishApiItems/DishApiItem'
+import DishApiItem from './DishApiItems/DishApiItem';
 
 
 
@@ -48,30 +49,16 @@ function AddDishesForm(props) {
 
     return(
       <div >
-        <div className='dishApiItems' 
-             style={{ 
-                      display: 'flex',
-                      flexDirection: 'row',
-                      flexWrap: 'wrap',
-                      width: '650px',
-                      height: '400px',
-                      marginBottom: '140px',
-                      marginLeft: '30px',
-                      textAlign: 'center',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      }}>
-                                      { dishs.map( (dish) => {
-                                        return <DishApiItem dish={dish} key={dish.dishId} />
-                                      }) }
+        <div className={s.dishApiItems}>
+              { dishs.map( (dish) => {
+                return <DishApiItem dish={dish} key={dish.dishId} />
+              }) }
         </div>
-        <div 
-          className='InputWithoutCheck' style={{position: 'relative', top: '-90px'}}>
-            <p style={{fontSize: '14px', textAlign: 'center', color: "#1976D2"}}>Начните поиск подходящего блюда в категории</p>
+        <div className={s.InputWithoutCheck}>
+            <p className={s.findedDishs} style={{}}> Начните поиск подходящего блюда в категории </p>
                 <div 
                   className="input-group mb-3" 
                   style={{marginTop:"5px", width:"400px", marginLeft: '120px'}} >
-                  
                     <span 
                       className="input-group-text border-0" 
                       id="search-addon" >
